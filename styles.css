@@ -11,6 +11,10 @@ body {
   display: block;
   text-align: center;
   overflow-x: hidden;
+
+  /* New lines to fix mobile padding */
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /* Container Styles */
@@ -141,5 +145,12 @@ footer {
   }
   100% {
     box-shadow: 0 0 15px rgba(110, 86, 207, 0.5), 0 0 25px rgba(241, 108, 250, 0.4);
+  }
+}
+
+/* Adding media */
+@media (max-width: 450px) {
+  .container {
+    padding: 30px 20px; /* reduced padding on very small screens */
   }
 }
