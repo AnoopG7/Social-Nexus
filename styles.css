@@ -1,52 +1,85 @@
+/* Body Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #00b4d8, #26e38b);
+  background-color: #0b0b11;
+  background-image: radial-gradient(circle at top left, #6e56cf33 10%, transparent 40%),
+                    radial-gradient(circle at bottom right, #f16cfa33 10%, transparent 40%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin: 0;
-  padding: 0;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   text-align: center;
+  overflow-x: hidden;
 }
 
+/* Container Styles */
 .container {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 50px 40px; 
+  background: linear-gradient(135deg, rgba(30, 30, 45, 0.8), rgba(15, 15, 25, 0.8));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 50px 40px;
   border-radius: 25px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 25px rgba(110, 86, 207, 0.2), 0 0 15px rgba(241, 108, 250, 0.15);
   width: 90%;
   max-width: 400px;
+  margin: 50px auto;
   animation: fadeIn 1s ease forwards;
-  margin: 30px; 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Hover effect on container */
+.container:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 35px rgba(110, 86, 207, 0.4), 0 0 25px rgba(241, 108, 250, 0.3);
+}
+
+/* Profile Picture */
 .profile-pic {
   width: 130px;
   height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #fff;
+  border: 4px solid var(--accent-color, #6e56cf);
   margin-bottom: 20px;
+  box-shadow: 0 0 30px rgba(110, 86, 207, 0.6);
+  transition: all 0.4s ease;
 }
 
+/* Profile Image Styles */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  animation: pulseGlow 2s infinite;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(110, 86, 207, 0.8);
+}
+
+/* Headings and Paragraphs */
 h1 {
   margin: 10px 0 5px;
-  font-size: 28px;
-  color: #fff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); 
+  font-size: 30px;
+  background: linear-gradient(to right, #6e56cf, #f16cfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 p {
   margin: 0 0 25px;
-  color: #ffffff;
+  color: #b4b4bb;
   font-size: 16px;
   font-weight: 500;
 }
 
+/* Link Buttons */
 .links {
   display: flex;
   flex-direction: column;
@@ -58,20 +91,20 @@ p {
   align-items: center;
   justify-content: center;
   padding: 14px 20px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #fff;
+  background: linear-gradient(135deg, #6e56cf, #f16cfa);
+  color: #ffffff;
   text-decoration: none;
   border-radius: 15px;
   font-weight: 600;
   font-size: 17px;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 4px 15px rgba(110, 86, 207, 0.5);
   transition: all 0.3s ease;
 }
 
 .link-button:hover {
-  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  background: linear-gradient(135deg, #5a46c1, #d85edf);
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+  box-shadow: 0 8px 20px rgba(241, 108, 250, 0.6);
 }
 
 .link-button i {
@@ -79,13 +112,14 @@ p {
   font-size: 20px;
 }
 
+/* Footer */
 footer {
   margin-top: 30px;
   font-size: 14px;
-  color: #e0e0e0;
+  color: #777;
 }
 
-
+/* Fade In Animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -94,5 +128,18 @@ footer {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(110, 86, 207, 0.5), 0 0 25px rgba(241, 108, 250, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(110, 86, 207, 0.8), 0 0 35px rgba(241, 108, 250, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(110, 86, 207, 0.5), 0 0 25px rgba(241, 108, 250, 0.4);
   }
 }
